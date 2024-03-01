@@ -13,4 +13,7 @@ test('Display Likes', () => {
   expect(displayLikes(['Alex', 'Jacob', 'Mark', 'Max', 'Jill'])).toEqual(
     'Alex, Jacob and 3 others like this'
   );
+  expect(displayLikes('Jill')).toEqual(
+    'please provide an array of names'
+  );
 });
