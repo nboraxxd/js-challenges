@@ -1,6 +1,6 @@
-const fizzBuzzArray = require('./fizzbuzz-array');
+const fizzBuzzArray = require('./fizzbuzz-array')
 
-test('FizzBuzz Array', () => {
+test('FizzBuzz Array #1', () => {
   expect(fizzBuzzArray(15)).toEqual([
     1,
     2,
@@ -17,5 +17,13 @@ test('FizzBuzz Array', () => {
     13,
     14,
     'FizzBuzz',
-  ]);
-});
+  ])
+})
+
+test('FizzBuzz Array #2', () => {
+  expect(fizzBuzzArray(1)).toEqual([1])
+})
+
+test('FizzBuzz Array #3', () => {
+  expect(fizzBuzzArray(0)).toEqual([])
+})
