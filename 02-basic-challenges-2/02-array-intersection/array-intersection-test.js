@@ -6,4 +6,5 @@ test('Finding array intersection', () => {
   ]);
   expect(arrayIntersection([10, 20, 30], [30, 40, 50])).toEqual([30]);
   expect(arrayIntersection([1, 2, 3], [4, 5, 6])).toEqual([]);
+  expect(arrayIntersection([-1, 2, 3], [-1, 4, 5, 6])).toEqual([]);
 });
