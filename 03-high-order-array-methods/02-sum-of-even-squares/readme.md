@@ -4,6 +4,8 @@
 
 Let's start off with a fairly simple challenge, but one that uses a few different array methods. Write a function called `sumOfEvenSquares` that takes an array of numbers and returns the sum of the squares of the even numbers in the array.
 
+Hãy bắt đầu với một thử thách khá đơn giản, nhưng sử dụng một số phương thức mảng khác nhau. Viết một hàm có tên là `sumOfEvenSquares` nhận vào một mảng số và trả về tổng bình phương của các số chẵn trong mảng.
+
 ### Function Signature
 
 ```js
@@ -18,9 +20,9 @@ function sumOfEvenSquares(numbers: number[]): number
 ### Examples
 
 ```js
-sumOfEvenSquares([1, 2, 3, 4, 5]); // 20 (2^2 + 4^2)
-sumOfEvenSquares([-1, 0, 1, 2, 3, 4]); // 20 (0^2 + 2^2 + 4^2)
-sumOfEvenSquares([]); // 0
+sumOfEvenSquares([1, 2, 3, 4, 5]) // 20 (2^2 + 4^2)
+sumOfEvenSquares([-1, 0, 1, 2, 3, 4]) // 20 (0^2 + 2^2 + 4^2)
+sumOfEvenSquares([]) // 0
 ```
 
 ### Hints
@@ -36,11 +38,9 @@ sumOfEvenSquares([]); // 0
 
 ```js
 function sumOfEvenSquares(numbers) {
-  const evenSquares = numbers
-    .filter((num) => num % 2 === 0)
-    .map((num) => num ** 2);
+  const evenSquares = numbers.filter((num) => num % 2 === 0).map((num) => num ** 2)
 
-  return evenSquares.reduce((sum, square) => sum + square, 0);
+  return evenSquares.reduce((sum, square) => sum + square, 0)
 }
 ```
 
@@ -63,7 +63,7 @@ const sumOfEvenSquares = (numbers) =>
   numbers
     .filter((num) => num % 2 === 0)
     .map((num) => num ** 2)
-    .reduce((sum, square) => sum + square, 0);
+    .reduce((sum, square) => sum + square, 0)
 ```
 
 </details>
@@ -72,8 +72,8 @@ const sumOfEvenSquares = (numbers) =>
 
 ```js
 test('Sum of even squares', () => {
-  expect(sumOfEvenSquares([1, 2, 3, 4, 5])).toBe(20);
-  expect(sumOfEvenSquares([-1, 0, 1, 2, 3, 4])).toBe(20);
-  expect(sumOfEvenSquares([])).toBe(0);
-});
+  expect(sumOfEvenSquares([1, 2, 3, 4, 5])).toBe(20)
+  expect(sumOfEvenSquares([-1, 0, 1, 2, 3, 4])).toBe(20)
+  expect(sumOfEvenSquares([])).toBe(0)
+})
 ```
