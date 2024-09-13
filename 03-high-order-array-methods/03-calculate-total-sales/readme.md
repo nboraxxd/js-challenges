@@ -4,12 +4,14 @@
 
 Use the given array of product objects below, each with their name, price, and quantity sold. Additionally, you are given a tax rate as a percentage. Write a function called `calculateTotalSalesWithTax` that takes in an array of product objects, along with the tax rate, and returns the total sales amount including tax.
 
+Sử dụng mảng các object sản phẩm được cung cấp dưới đây, mỗi object có name, price và quantity sold. Ngoài ra, bạn cũng được cung cấp một tỷ lệ thuế dưới dạng phần trăm. Viết một hàm có tên là `calculateTotalSalesWithTax` nhận vào một mảng các object sản phẩm, cùng với tỷ lệ thuế, và trả về tổng số tiền bán hàng bao gồm cả thuế.
+
 ```js
 const products = [
   { name: 'Apple', price: 0.5, quantity: 10 },
   { name: 'Banana', price: 0.3, quantity: 20 },
   { name: 'Orange', price: 0.6, quantity: 15 },
-];
+]
 ```
 
 ### Function Signature
@@ -37,7 +39,7 @@ calculateTotalSalesWithTax(
     { name: 'Orange', price: 0.6, quantity: 15 },
   ],
   8
-); // 21.6 (20 + 8% tax)
+) // 21.6 (20 + 8% tax)
 
 calculateTotalSalesWithTax(
   [
@@ -47,7 +49,7 @@ calculateTotalSalesWithTax(
     { name: 'Candy', price: 0.5, quantity: 15 },
   ],
   5
-); // 42 (40 + 5% tax)
+) // 42 (40 + 5% tax)
 ```
 
 ### Constraints
@@ -73,16 +75,13 @@ const products = [
   { name: 'Apple', price: 0.5, quantity: 10 },
   { name: 'Banana', price: 0.3, quantity: 20 },
   { name: 'Orange', price: 0.6, quantity: 15 },
-];
+]
 
 function calculateTotalSalesWithTax(products, taxRate) {
-  const totalSales = products.reduce(
-    (sum, product) => sum + product.price * product.quantity,
-    0
-  );
-  const taxAmount = (totalSales * taxRate) / 100;
-  const totalSalesWithTax = totalSales + taxAmount;
-  return totalSalesWithTax;
+  const totalSales = products.reduce((sum, product) => sum + product.price * product.quantity, 0)
+  const taxAmount = (totalSales * taxRate) / 100
+  const totalSalesWithTax = totalSales + taxAmount
+  return totalSalesWithTax
 }
 ```
 
@@ -108,7 +107,7 @@ test('Calculating total sales amount with tax', () => {
       ],
       8
     )
-  ).toBe(21.6);
+  ).toBe(21.6)
 
   expect(
     calculateTotalSalesWithTax(
@@ -120,8 +119,8 @@ test('Calculating total sales amount with tax', () => {
       ],
       5
     )
-  ).toBe(42);
-});
+  ).toBe(42)
+})
 ```
 
 Feel free to adjust the challenge or the test cases as needed. If you have any further questions or need additional assistance, please let me know!
