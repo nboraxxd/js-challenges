@@ -10,6 +10,14 @@ If two words score the same, return the word that appears earliest in the origin
 
 All letters will be lowercase and all inputs will be valid.
 
+Cho một chuỗi các từ, bạn cần tìm từ có điểm cao nhất. Mỗi chữ cái trong một từ được tính điểm dựa trên vị trí của nó trong bảng chữ cái: `a` = 1, `b` = 2, `c` = 3, và cứ tiếp tục như vậy.
+
+Bạn cần trả về từ có điểm cao nhất dưới dạng một chuỗi.
+
+Nếu hai từ có cùng số điểm, hãy trả về từ xuất hiện sớm nhất trong chuỗi ban đầu.
+
+Tất cả các chữ cái sẽ là chữ thường và tất cả các đầu vào sẽ hợp lệ.
+
 ### Function Signature
 
 ```js
@@ -24,9 +32,9 @@ function highestScoringWord(str: string): string;
 ### Examples
 
 ```js
-highestScoringWord('man i need a taxi up to ubud'); // 'taxi'
-highestScoringWord('what time are we climbing up the volcano'); // 'volcano'
-highestScoringWord('take me to semynak'); // 'semynak'
+highestScoringWord('man i need a taxi up to ubud') // 'taxi'
+highestScoringWord('what time are we climbing up the volcano') // 'volcano'
+highestScoringWord('take me to semynak') // 'semynak'
 ```
 
 ### Constraints
@@ -46,27 +54,27 @@ highestScoringWord('take me to semynak'); // 'semynak'
 
 ```js
 function highestScoringWord(str) {
-  const words = str.split(' ');
+  const words = str.split(' ')
 
   const scores = words.map((word) => {
-    let score = 0;
+    let score = 0
     for (const letter of word) {
-      score += letter.charCodeAt(0) - 96;
+      score += letter.charCodeAt(0) - 96
     }
-    return score;
-  });
+    return score
+  })
 
-  let highestScore = 0;
-  let highestIndex = 0;
+  let highestScore = 0
+  let highestIndex = 0
 
   for (let i = 0; i < scores.length; i++) {
     if (scores[i] > highestScore) {
-      highestScore = scores[i];
-      highestIndex = i;
+      highestScore = scores[i]
+      highestIndex = i
     }
   }
 
-  return words[highestIndex];
+  return words[highestIndex]
 }
 ```
 
@@ -86,19 +94,14 @@ This solution looks a bit cleaner than the previous one, but it's not as efficie
 
 ```js
 function highestScoringWord(str) {
-  const words = str.split(' ');
+  const words = str.split(' ')
 
-  const scores = words.map((word) =>
-    Array.from(word).reduce(
-      (score, letter) => score + letter.charCodeAt(0) - 96,
-      0
-    )
-  );
+  const scores = words.map((word) => Array.from(word).reduce((score, letter) => score + letter.charCodeAt(0) - 96, 0))
 
-  const highestScore = Math.max(...scores);
-  const highestIndex = scores.indexOf(highestScore);
+  const highestScore = Math.max(...scores)
+  const highestIndex = scores.indexOf(highestScore)
 
-  return words[highestIndex];
+  return words[highestIndex]
 }
 ```
 
@@ -117,12 +120,10 @@ function highestScoringWord(str) {
 
 ```js
 test('Finding the highest scoring word', () => {
-  expect(highestScoringWord('hello my name is xavier')).toBe('xavier');
-  expect(highestScoringWord('what time are we climbing up the volcano')).toBe(
-    'volcano'
-  );
-  expect(highestScoringWord('take me to semynak')).toBe('semynak');
-});
+  expect(highestScoringWord('hello my name is xavier')).toBe('xavier')
+  expect(highestScoringWord('what time are we climbing up the volcano')).toBe('volcano')
+  expect(highestScoringWord('take me to semynak')).toBe('semynak')
+})
 ```
 
 Remember to use the provided test cases to verify your solution
